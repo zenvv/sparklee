@@ -1,11 +1,11 @@
-import { Sparkles } from "lucide-react";
+import { RiLoader4Fill } from "react-icons/ri";
 
 export default function Loading() {
-    return  (
-      <div className="w-full h-full flex items-center justify-center">
-        <span className="text-muted-foreground animate-rotate-y animate-infinite animate-duration-[2000ms] animate-ease-in-out">
-          <Sparkles size={28} />
-        </span>
-      </div>
-    )
-  }
+  return (
+    <div className="flex items-center justify-center w-full h-full">
+      <span className="text-muted-foreground/50 animate-spin animate-ease-in-out">
+        <RiLoader4Fill size={28} />
+      </span>
+    </div>
+  );
+}

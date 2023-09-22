@@ -11,6 +11,7 @@ import {
 import { useEffect, useState } from "react";
 import { CreatePost } from "../post/create-post/createPost";
 import { Sparkles } from "lucide-react";
+import { RiEmotionSadLine } from "react-icons/ri";
 
 export interface Post {
   id: string;
@@ -48,13 +49,12 @@ export default function Feed() {
   return (
     <div className="w-full h-full">
       <div className="flex items-start justify-start w-full h-full">
-        <div className="flex flex-col items-center justify-center w-full h-full gap-2">
-          <header className="w-full border rounded-md bg-card">
-            <CreatePost />
-          </header>
-
+        <div className="flex flex-col items-center justify-center w-full h-full gap-2 transition-all">
           {!postsList?.length == false ? (
             <main className="flex flex-col items-center justify-center w-full gap-2">
+              <header className="w-full mb-4">
+                <CreatePost />
+              </header>
               <span className="flex items-center justify-center w-full gap-2 p-3 text-muted-foreground">
                 <Sparkles size={13} />
                 <h1 className="text-sm font-semibold">
@@ -72,9 +72,19 @@ export default function Feed() {
               </span>
             </main>
           ) : (
-            <div className="flex flex-col items-center justify-center w-full p-4 py-12 border rounded-md bg-muted text-muted-foreground">
-              <h1 className="font-bold">There are no posts today ;(</h1>
-              <span>start by writing your own!</span>
+            <div className="flex flex-col items-center justify-center w-full gap-8">
+              <div className="flex flex-col items-center justify-center w-full h-full gap-4 p-4 py-12 text-lg border rounded-xl bg-muted/30 text-muted-foreground">
+                <RiEmotionSadLine size={48} className="opacity-40" />
+                <span className="flex flex-col items-center">
+                  <h1 className="font-bold">There are no posts yet =/</h1>
+                  <span className="text-sm">
+                    You could start by writing your own!
+                  </span>
+                </span>
+              </div>
+              <header className="flex w-full">
+                <CreatePost />
+              </header>
             </div>
           )}
         </div>

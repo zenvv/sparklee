@@ -27,48 +27,47 @@ export const metadata: Metadata = {
 export default function LoginPage() {
   return (
     <div className="flex items-center justify-center w-full h-screen overflow-hidden">
-      <div className="flex items-center justify-center w-full h-full p-8 max-w-7xl">
-        <div className="flex items-center justify-center w-full h-full overflow-hidden border rounded-xl">
-          <div className="flex flex-col items-center justify-between w-full h-full overflow-hidden">
-            <header className="flex items-center justify-between w-full p-8 text-primary">
-              <SparkleeLogo />
-              <ThemeButton />
-            </header>
+      <div className="relative flex flex-row-reverse items-center justify-center w-full h-full max-w-6xl">
+        <div className="flex flex-col items-center justify-between w-full h-full overflow-hidden">
+          <div className="relative flex flex-col items-center justify-between w-full h-full">
+            <main className="flex flex-col items-center justify-center w-1/2 h-full gap-16">
+              <span className="scale-150 text-primary">
+                <SparkleeLogo />
+              </span>
+              <div className="flex flex-col items-center justify-center gap-8">
+                <PostLogin />
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  Join the vibrant community of sparklee! Unleash your thoughts,
+                  follow your interests, and engage in meaningful discussions.{" "}
+                  <br />
+                  <strong className="text-primary">
+                    Log in now and be part of the spark!
+                  </strong>
+                </p>
+              </div>
+              <div className="flex items-center justify-center w-full gap-4">
+                <LoginGoogle />
+                <p className="text-xs text-muted-foreground">or</p>
+                <LoginGithub />
+              </div>
+            </main>
 
-            <div className="flex items-center w-full gap-8 p-4">
-              <LoginGoogle />
-              <LoginGithub />
-            </div>
-
-            <footer className="flex items-center justify-center w-full p-6 border-t">
-              <span className="text-sm text-primary/50">
-                made with ♡ by{" "}
+            <footer className="flex items-center justify-between w-1/2 py-6">
+              <span className="text-sm text-primary/80">
+                made with ♡ by
                 <a
-                  className="hover:text-primary hover:underline"
+                  className="ml-1 font-semibold hover:text-accent hover:underline"
                   href="https://www.github.com/zenvv"
                   rel="external"
                 >
                   zenvv
                 </a>
               </span>
+              <ThemeButton />
             </footer>
           </div>
-          <div className="flex items-center justify-center w-full h-full p-8 overflow-hidden bg-accent">
-            <main className="flex items-center justify-center flex-1 w-full h-full">
-              <div className="flex flex-col items-center justify-center gap-8 ">
-                <PostLogin />
-                <p className="text-base leading-relaxed opacity-80 text-background">
-                  Join the vibrant community of sparklee! Unleash your thoughts,
-                  follow your interests, and engage in meaningful discussions.{" "}
-                  <br />
-                  <strong className="text-background">
-                    Log in now and be part of the spark!
-                  </strong>
-                </p>
-              </div>
-            </main>
-          </div>
         </div>
+        <div className="absolute w-4/6 skew-y-12 h-4/6 -z-10 bg-gradient-to-tl from-indigo-600 to-purple-500 blur-[200px] opacity-40"></div>
       </div>
     </div>
   );

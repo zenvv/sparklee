@@ -35,12 +35,14 @@ export default function RootLayout({
 
 function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <body className="flex items-start justify-center w-screen h-full min-h-screen bg-muted/20">
-      <div className="flex items-start w-full h-screen max-w-5xl border-x">
-        <aside className="sticky top-0 flex items-center justify-center w-1/3 h-full overflow-hidden">
+    <body className="flex items-start justify-center w-screen h-full min-h-screen bg-muted/30">
+      <div className="flex items-start w-full h-screen max-w-6xl">
+        <aside className="sticky top-0 flex items-center justify-center w-[30%] h-full overflow-hidden">
           <Navbar />
         </aside>
-        <main className="flex-1 w-full p-8 bg-background">{children}</main>
+        <main className="flex-1 w-full h-full p-8 px-10 bg-background border-x">
+          {children}
+        </main>
       </div>
     </body>
   );
